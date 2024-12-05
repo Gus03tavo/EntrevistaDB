@@ -1,0 +1,53 @@
+﻿@model IEnumerable<EntrevistaDB.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ClNombres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClApellidos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClCorreo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClCelular)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClNombres)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClApellidos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClCorreo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClCelular)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ClDni">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ClDni">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ClDni">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

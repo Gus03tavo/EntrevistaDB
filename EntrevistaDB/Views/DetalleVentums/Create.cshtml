@@ -1,0 +1,51 @@
+﻿@model EntrevistaDB.Models.DetalleVentum
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>DetalleVentum</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="VentaId" class="control-label"></label>
+                <select asp-for="VentaId" class ="form-control" asp-items="ViewBag.VentaId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProId" class="control-label"></label>
+                <select asp-for="ProId" class ="form-control" asp-items="ViewBag.ProId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DvCantidad" class="control-label"></label>
+                <input asp-for="DvCantidad" class="form-control" />
+                <span asp-validation-for="DvCantidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DvPreciounitario" class="control-label"></label>
+                <input asp-for="DvPreciounitario" class="form-control" />
+                <span asp-validation-for="DvPreciounitario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DvSubtotal" class="control-label"></label>
+                <input asp-for="DvSubtotal" class="form-control" />
+                <span asp-validation-for="DvSubtotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,53 @@
+﻿@model EntrevistaDB.Models.Cliente
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Cliente</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ClDni" class="control-label"></label>
+                <input asp-for="ClDni" class="form-control" />
+                <span asp-validation-for="ClDni" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClNombres" class="control-label"></label>
+                <input asp-for="ClNombres" class="form-control" />
+                <span asp-validation-for="ClNombres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClApellidos" class="control-label"></label>
+                <input asp-for="ClApellidos" class="form-control" />
+                <span asp-validation-for="ClApellidos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClCorreo" class="control-label"></label>
+                <input asp-for="ClCorreo" class="form-control" />
+                <span asp-validation-for="ClCorreo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClCelular" class="control-label"></label>
+                <input asp-for="ClCelular" class="form-control" />
+                <span asp-validation-for="ClCelular" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
